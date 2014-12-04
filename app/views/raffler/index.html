@@ -1,0 +1,25 @@
+<h1>Southpark Raffle</h1>
+<style>
+  .winner {
+    background-color: red;
+  }
+</style>
+
+<div ng-controller = "RaffleController">
+
+  <form ng-submit="addPlayer()">
+      <input type="text" ng-model="newName">
+      <input type="submit" value="Add">
+  </form>
+
+  <button ng-click="raffle()">Raffle Time!</button>
+
+  <ul>
+    <li ng-repeat="player in players" ng-class="{winner : player.winner}">
+    {{player.name}}
+    </li>
+  </ul>
+
+  <h2>{{ test | currency }}</h2>
+</div>
+
